@@ -1,10 +1,12 @@
 <pre class=prettyprint><code class='language-java '>package com.hybris.yaas.bites;
 
-import java.util.List;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import org.springframework.data.repository.CrudRepository;
-
-public interface TipsRepo extends CrudRepository<Tip, Long> {
-	List<Tip> findByTenant(String tenant);
+@SpringBootApplication
+public class Application {
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
 }
 </code></pre>
