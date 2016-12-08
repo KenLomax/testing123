@@ -1,6 +1,12 @@
-<style type="text/css">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title></title>
+  <style type="text/css">
     <!--code { font-family: Courier New, Courier; font-size: 10pt; margin: 0px; }-->
   </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head><body>
+
 
 <!-- ======================================================== -->
 <!-- = Java Sourcecode to HTML automatically converted code = -->
@@ -66,6 +72,7 @@
 <font color="#000000">}</font><br />
 <font color="#ffffff"></font><font color="#ffffff">
 </font></code>
+    
    </td>
   <!-- end source code -->
    </tr>
@@ -83,3 +90,65 @@
 <!-- =       END of automatically generated HTML code       = -->
 <!-- ======================================================== -->
 
+
+<p />
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#7f0055"><b>package&nbsp;</b></font><font color="#000000">com.hybris.yaas.bites;</font><br />
+<font color="#ffffff"></font><br />
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">java.util.concurrent.atomic.AtomicLong;</font><br />
+<font color="#ffffff"></font><br />
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">org.slf4j.Logger;</font><br />
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">org.slf4j.LoggerFactory;</font><br />
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">org.springframework.http.HttpStatus;</font><br />
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">org.springframework.http.ResponseEntity;</font><br />
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">org.springframework.web.bind.annotation.RequestMapping;</font><br />
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">org.springframework.web.bind.annotation.RequestParam;</font><br />
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">org.springframework.web.bind.annotation.RestController;</font><br />
+<font color="#ffffff"></font><br />
+<font color="#646464">@RestController</font><br />
+<font color="#7f0055"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">GreetingController&nbsp;</font><font color="#000000">{</font><br />
+<font color="#ffffff"></font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;final&nbsp;</b></font><font color="#000000">String&nbsp;TEMPLATE&nbsp;=&nbsp;</font><font color="#2a00ff">&#34;Greetings&nbsp;from&nbsp;Bayern,&nbsp;Most&nbsp;Honorable&nbsp;%s!&#34;</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;final&nbsp;</b></font><font color="#000000">Logger&nbsp;LOG&nbsp;=&nbsp;LoggerFactory.getLogger</font><font color="#000000">(</font><font color="#000000">GreetingController.</font><font color="#7f0055"><b>class</b></font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;final&nbsp;</b></font><font color="#000000">AtomicLong&nbsp;counter&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">AtomicLong</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#646464">@RequestMapping</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;/greeting&#34;&nbsp;</font><font color="#000000">)</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">ResponseEntity&lt;Greeting&gt;&nbsp;greetings</font><font color="#000000">(&nbsp;</font><font color="#646464">@RequestParam</font><font color="#000000">(&nbsp;</font><font color="#000000">value=</font><font color="#2a00ff">&#34;name&#34;</font><font color="#000000">,&nbsp;defaultValue=</font><font color="#2a00ff">&#34;User&#34;</font><font color="#000000">)&nbsp;</font><font color="#000000">String&nbsp;name</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">LOG.debug</font><font color="#000000">(</font><font color="#2a00ff">&#34;=======&nbsp;In&nbsp;/greetings&nbsp;with&nbsp;name:&nbsp;&#34;</font><font color="#000000">+&nbsp;name&nbsp;</font><font color="#000000">)</font><font color="#000000">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;new&nbsp;</b></font><font color="#000000">ResponseEntity&lt;Greeting&gt;</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Greeting</font><font color="#000000">(</font><font color="#000000">counter.incrementAndGet</font><font color="#000000">()</font><font color="#000000">,&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">String.format</font><font color="#000000">(</font><font color="#000000">TEMPLATE,&nbsp;name</font><font color="#000000">))</font><font color="#000000">,&nbsp;HttpStatus.OK</font><font color="#000000">)</font><font color="#000000">;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff"></font><br />
+<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+  <!-- start Java2Html link -->
+   <tr>
+    <td align="right">
+<small>
+<a href="http://www.java2html.de" target="_blank">Java2html</a>
+</small>
+    </td>
+   </tr>
+  <!-- end Java2Html link -->
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+
+</body></html>
